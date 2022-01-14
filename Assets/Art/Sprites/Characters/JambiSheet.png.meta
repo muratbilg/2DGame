@@ -56,7 +56,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 7
   spritePivot: {x: 0.5, y: 0}
-  spritePixelsToUnits: 150
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -84,9 +84,33 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 1024
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 1024
     resizeAlgorithm: 1
     textureFormat: -1
@@ -101,64 +125,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: JambiIdle1
+      name: JambiSheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 768
         width: 256
         height: 256
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b9f29c444b3a0a488d9e380dd4e476f
-      internalID: 21300000
+      spriteID: f923a05534ee77f4996514e56b9c9f93
+      internalID: 116296259
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JambiIdle2
+      name: JambiSheet_1
       rect:
         serializedVersion: 2
         x: 256
         y: 768
         width: 256
         height: 256
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac704b7ce23e935479b6b68735992ca3
-      internalID: 21300002
+      spriteID: 7da494ac25e063c4a8fbd409915e4b68
+      internalID: -257498694
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JambiIdle3
+      name: JambiSheet_2
       rect:
         serializedVersion: 2
         x: 512
         y: 768
         width: 256
         height: 256
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: caa29f31bb01b004a92b38edc46f72f3
-      internalID: 21300004
+      spriteID: bffb61efc62041243990ce0b1545c745
+      internalID: 1769480837
       vertices: []
       indices: 
       edges: []
@@ -174,9 +198,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      JambiIdle1: 21300000
-      JambiIdle2: 21300002
-      JambiIdle3: 21300004
+      JambiSheet_1: -257498694
+      JambiSheet_2: 1769480837
+      JambiSheet_0: 116296259
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

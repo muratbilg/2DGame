@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float speedEnemy = 0.94f;
     [SerializeField] private bool vertical = true;
     [SerializeField] private float changeTime = 1.26f;
+    [SerializeField] private ParticleSystem smokeEffect;
     Rigidbody2D rigidbody2D;
     Animator animator;
     float timer;
@@ -69,5 +70,6 @@ public class EnemyController : MonoBehaviour
         isBroken = false;
         rigidbody2D.simulated = false; //This removes the Rigidbody from the Physics System simulation, so it won’t be taken into account by the system for collision, and the fixed robot won’t stop the Projectile anymore or be able to hurt the main character.
         animator.SetBool("Fixed", true);
+        smokeEffect.Stop();
     }
 }

@@ -18,6 +18,8 @@ public class RubyController : MonoBehaviour
     float invincibleTimer;
     Vector2 lookDirection = new Vector2(1, 0);
 
+    AudioSource audioSource;
+
     public int health 
     { 
         get 
@@ -32,6 +34,7 @@ public class RubyController : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
         rubyAnimator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -61,8 +64,20 @@ public class RubyController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
             Launch();
-        } 
-        
+        }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            RaycastHit2D hit = Physics2D.Raycast(rigidbody2d.position + Vector2.up * 0.2f, lookDirection, 1.5f, LayerMask.GetMask("NPC"));
+            if (hit.collider != null)
+            {
+                NPCScript character = hit.collider.GetComponent<NPCScript>();
+                if (character != null)
+                {
+                    character.DisplayDialog();
+                }
+            }
+        }
+
     }
 
     void FixedUpdate()
@@ -87,6 +102,7 @@ public class RubyController : MonoBehaviour
             invincibleTimer = timeInvincible;
         }
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+        UIHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
         Debug.Log(currentHealth + "/" + maxHealth);
     }
     void Launch()
@@ -97,6 +113,11 @@ public class RubyController : MonoBehaviour
         projectile.Launch(lookDirection, 300);
 
         rubyAnimator.SetTrigger("Launch");
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
     }
 
 }

@@ -4,17 +4,8 @@ using UnityEngine;
 
 public class HealthScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public AudioClip collectedClip;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         RubyController rubyController = other.GetComponent<RubyController>();
@@ -24,6 +15,8 @@ public class HealthScript : MonoBehaviour
             {
                 rubyController.ChangeHealth(1);
                 Destroy(gameObject);
+
+                rubyController.PlaySound(collectedClip);
             }
         }
     }
